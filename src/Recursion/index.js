@@ -4,6 +4,11 @@ function printNumbers(n) {
   console.log(n)
 }
 
-printNumbers(3)
+// printNumbers(3)
 
+function fic(n) {
+  if (n == 0 || n == 1) return 1
+  return n * fic(n - 1)
+}
 
+// console.log(fic(5))
