@@ -12,3 +12,9 @@ function fic(n) {
 }
 
 // console.log(fic(5))
+
+function sumNumbers(n) {
+  if (n == 1) return 1
+  return n + sumNumbers(n - 1)
+}
+console.log(sumNumbers(10));
