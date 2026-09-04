@@ -1,0 +1,24 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/AbuakarCodes/Learning#readme",
+  "bugs": {
+    "url": "https://github.com/AbuakarCodes/Learning/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbuakarCodes/Learning.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node ./src/Recursion/index.js",
+    "start": "nodemon ./src/Recursion/index.js"
+  },
+  "dependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
