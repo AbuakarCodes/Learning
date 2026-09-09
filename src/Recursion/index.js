@@ -44,7 +44,7 @@ function isArraySorted(array, index = 0) {
 // REDUCED TO MAY BE 2 AS THE ARRYS GETS REDUCED ...
 
 function BinarySearch(array, target, left = 0, right = array.length - 1) {
-if (left > right) return -1
+  if (left > right) return -1
   let mid = Math.floor((left + right) / 2)
 
   if (target === array[mid]) return mid
@@ -54,3 +54,76 @@ if (left > right) return -1
 }
 
 // console.log(BinarySearch([1, 2, 3, 4], 2))
+
+let current = []
+let arr = [1, 2]
+function backtrack(index) {
+  if (index === arr.length) {
+    console.log(current)
+    return
+  }
+
+  // 1. Include
+  current.push(arr[index])
+  backtrack(index + 1)
+
+  // 2. Undo
+  current.pop()
+
+  // 3. Exclude
+  backtrack(index + 1)
+}
+
+// console.log(backtrack(0))
+
+
+
+function mergeSort(arr) {
+
+  function merge(arrA, arrB) {
+  let i = 0
+  let j = 0  // [1,2],[5,6]
+
+  let array = []
+
+  while (i < arrA.length && j < arrB.length) {
+    if (arrA[i] < arrB[j]) {
+      array.push(arrA[i])
+      i++
+    } else  {
+      array.push(arrB[j])
+      j++
+    }
+  }
+
+  while (i < arrA.length) {
+    array.push(arrA[i])
+    i++
+  }
+
+  while (j < arrB.length) {
+    array.push(arrB[j])
+    j++
+  }
+
+  return array
+}
+
+  if (arr.length <= 1) return arr
+
+  let mid = Math.floor(arr.length / 2)
+
+  let leftArray = arr.slice(0, mid)
+  let rightArray = arr.slice(mid)
+
+  // console.log()
+  leftArray = mergeSort(leftArray) // <>
+  rightArray = mergeSort(rightArray)
+
+  return merge(leftArray, rightArray)
+}
+
+
+
+
+console.log(mergeSort([1,4,6,7,3,8,3,3])) 
