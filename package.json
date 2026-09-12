@@ -15,8 +15,8 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "dev": "node ./src/Recursion/index.js",
-    "start": "nodemon ./src/Recursion/index.js"
+    "dev": "node ./src/DP/index.js",
+    "start": "nodemon ./src/DP/index.js"
   },
   "dependencies": {
     "nodemon": "^3.1.14"

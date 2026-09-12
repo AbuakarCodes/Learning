@@ -76,38 +76,35 @@ function backtrack(index) {
 
 // console.log(backtrack(0))
 
-
-
 function mergeSort(arr) {
-
   function merge(arrA, arrB) {
-  let i = 0
-  let j = 0  // [1,2],[5,6]
+    let i = 0
+    let j = 0 // [1,2],[5,6]
 
-  let array = []
+    let array = []
 
-  while (i < arrA.length && j < arrB.length) {
-    if (arrA[i] < arrB[j]) {
+    while (i < arrA.length && j < arrB.length) {
+      if (arrA[i] < arrB[j]) {
+        array.push(arrA[i])
+        i++
+      } else {
+        array.push(arrB[j])
+        j++
+      }
+    }
+
+    while (i < arrA.length) {
       array.push(arrA[i])
       i++
-    } else  {
+    }
+
+    while (j < arrB.length) {
       array.push(arrB[j])
       j++
     }
-  }
 
-  while (i < arrA.length) {
-    array.push(arrA[i])
-    i++
+    return array
   }
-
-  while (j < arrB.length) {
-    array.push(arrB[j])
-    j++
-  }
-
-  return array
-}
 
   if (arr.length <= 1) return arr
 
@@ -123,7 +120,24 @@ function mergeSort(arr) {
   return merge(leftArray, rightArray)
 }
 
+// console.log(mergeSort([1,4,6,7,3,8,3,3]))
 
+function findFib(n) {
+  let fiBarray = []
+  console.log(fiBarray);
 
+  function fibonacci(n) {
+    if (n <= 1) return n
 
-console.log(mergeSort([1,4,6,7,3,8,3,3])) 
+    if (fiBarray[n] != undefined) return fiBarray[n] 
+
+    let result = fibonacci(n - 1) + fibonacci(n - 2)
+    fiBarray[n] = result
+
+    return result
+  }
+
+  return fibonacci(n)
+}
+
+console.log(findFib(6));
