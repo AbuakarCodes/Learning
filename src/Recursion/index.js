@@ -141,3 +141,4 @@ function findFib(n) {
 }
 
 console.log(findFib(6));
+
